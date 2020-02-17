@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gradijent assigment</title>
+    <style>
+        
+        .pozadina {
+            width:480px;
+            height:480px;
+            margin: 30px 30px 30px 30px;
+            background-color:#050210;
+        }
+
+        .krug::before{
+            content: "";
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            bottom: -8px;
+            left:-8px;
+            border-radius: 180px;
+            background:linear-gradient(#fb5dad, #55fb9f, #b97aff);
+            z-index: 1;
+            filter: blur(28px);
+            animation-name: rotacija;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-delay: inherit;
+            animation-timing-function: linear;
+        }
+
+        .krug {
+            position: absolute;
+            top: 90px;
+            width: 360px;
+            height:360px; 
+            z-index: 10;
+            margin-left: 60px;
+            border: 1px solid;
+            border-radius: 180px;
+            background:linear-gradient(#fb5dad, #55fb9f, #b97aff);
+            animation-name: rotacija;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-delay: inherit;
+            animation-timing-function: linear;
+        }
+
+        .centarkruga {
+            position: absolute;
+            top: 40px;
+            width: 280px;
+            height:280px; z-index: 99;
+            margin-left: 40px;
+            border-radius: 140px;
+            background-color:#050210;  
+        }
+
+        .central {
+            position: centar;
+            top: 40px;
+            width: 280px;
+            height:280px; z-index: 100;
+
+            border-radius: 140px;
+            background-color:#050210; 
+            animation-name: rfillcentral;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            animation-direction: reverse;
+            }
+
+        @keyframes rfillcentral{
+            0%{ 
+                transform: scale(1);
+                background-color: #09031f;
+            }
+            100%{
+                transform: scale(0);
+                background-color: #09031f;
+            }
+        }
+        
+        @keyframes rotacija{
+            0%{
+                transform: rotate(0deg);
+            }
+
+            100%{
+                transform: rotate(359deg);
+            }
+        } 
+
+    </style>
+</head>
+
+<body>
+    <div class="pozadina">
+        <div class="krug" id="krug2">
+            <div class="centarkruga">
+                <div class="central">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
